@@ -1,5 +1,9 @@
 # rlookup
 
-This project is to have R code, that will ultimately be in a CRAN package, that can take data that does does not have a unique identifier, and find a unique identifier for each record from a lookup source.  As an example, let's say you have a customer database, and you did a survey, but the survey software you used did not have their customer ID number, but included asking for their first name, last name, age, and city.  By using rlookup it will look at pairs of these non-unique identifiers in the survey data and see if any of them uniquely match with your customers in the database, and if they do, to then add the customer number to the surey data, so you can link the data with traditional data tools.
+rlookup is an R function that performs a reverse lookup to find a unique identifier for data that has non-unique identifiers
+
+The rlookup function can help when data is collected about known entities (for example customers), but the data collected does not contain a unique
+identifier for the entity (for example customer survey data that does not contain the customer id).  If the data contains non-unique identifiers (for example first name, last name, age, and city), the rlookup function compares permutations of these non-unique identifiers with a lookup table (such as a customer database) to find unique matches between the two datasets. The rlookup function then adds the unique identifier (i.e. customer id) to the
+entities in the data that does not have the unique identifier (i.e. survey data), so that traditional data tools can connect the two data sources.
 
 This is being developed in JupyterLab first, but will ultimately be made into a CRAN package.
